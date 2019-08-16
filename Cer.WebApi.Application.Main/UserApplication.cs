@@ -83,12 +83,13 @@ namespace Cer.WebApi.Application.Main
                 if (response.Data)
                 {
                     response.IsSuccess = true;
-                    response.Message = "Registro Exitoso!!!";
+                    response.Message = "Registro Exitoso!!!";                   
                 }
             }
             catch (Exception e)
             {
-                response.Message = e.Message;
+                response.Message = e.Message + "--> InnerException.Message-->" + e.InnerException.Message;
+                _logger.LogError(response.Message);
             }
             return response;
         }

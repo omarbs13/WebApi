@@ -1,0 +1,14 @@
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.deps.json
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Common.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Common.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\bin\Debug\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Cross.Logging\obj\Debug\netstandard2.0\Cer.WebApi.Cross.Logging.pdb

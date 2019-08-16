@@ -5,14 +5,24 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Services.WebApi\Cer.WebApi.Services.WebApi.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cer.WebApi.Application.Interface\Cer.WebApi.Application.Interface.csproj" />
     <ProjectReference Include="..\Cer.WebApi.Application.Main\Cer.WebApi.Application.Main.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Cross.Logging\Cer.WebApi.Cross.Logging.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Cross.Mapper\Cer.WebApi.Cross.Mapper.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Domain.Core\Cer.WebApi.Domain.Core.csproj" />
     <ProjectReference Include="..\Cer.WebApi.Infraestructure.Data\Cer.WebApi.Infraestructure.Data.csproj" />
     <ProjectReference Include="..\Cer.WebApi.Infrastructure.Interface\Cer.WebApi.Infrastructure.Interface.csproj" />
     <ProjectReference Include="..\Cer.WebApi.Infrastructure.Repository\Cer.WebApi.Infrastructure.Repository.csproj" />

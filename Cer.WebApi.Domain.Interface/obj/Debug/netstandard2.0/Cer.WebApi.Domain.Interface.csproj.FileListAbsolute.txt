@@ -5,7 +5,6 @@ C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\bin\Debug\net
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Domain.Entity.pdb
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
-C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.csprojAssemblyReference.cache
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.AssemblyInfoInputs.cache
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.AssemblyInfo.cs
