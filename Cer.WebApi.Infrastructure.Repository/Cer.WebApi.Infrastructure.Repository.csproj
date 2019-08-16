@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cer.WebApi.Infraestructure.Data\Cer.WebApi.Infraestructure.Data.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Infrastructure.Interface\Cer.WebApi.Infrastructure.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

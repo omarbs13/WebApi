@@ -1,0 +1,6 @@
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\bin\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.deps.json
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\bin\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\obj\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\obj\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\obj\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infraestructure.Data\obj\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.csprojAssemblyReference.cache
