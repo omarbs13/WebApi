@@ -14,6 +14,12 @@ namespace Cer.WebApi.Infraestructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>()
               .HasKey(t => t.Id);
+
+            modelBuilder.Entity<Rol>()
+              .HasKey(t => t.Id);
+
+            modelBuilder.Entity<UserProfile>()
+              .HasKey(t => t.Id);
         }
     }
 }

@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Cer.WebApi.Application.Main
 {
-    public class UserModelApplication : IUserApplication
+    public class UserApplication : IUserApplication
     {
         private readonly IUserDomain _userModelDomain;
         private readonly IMapper _mapper;
-        private readonly IAppLogger<UserModelApplication> _logger;
-        public UserModelApplication(IUserDomain userDomain, IMapper mapper, IAppLogger<UserModelApplication> logger)
+        private readonly IAppLogger<UserApplication> _logger;
+        public UserApplication(IUserDomain userDomain, IMapper mapper, IAppLogger<UserApplication> logger)
         {
             _userModelDomain = userDomain;
             _mapper = mapper;

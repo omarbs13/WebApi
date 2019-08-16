@@ -1,0 +1,14 @@
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Application.Interface.deps.json
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Application.Interface.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Application.Interface.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Application.Model.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Common.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Application.Model.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Cross.Common.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Application.Interface.pdb

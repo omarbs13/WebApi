@@ -7,8 +7,6 @@ namespace Cer.WebApi.Domain.Entity
 {
     public class User : BaseEntity
     {
-        //   public int RolId { get; set; }
-
         [Required]
         public string UserName { get; set; }
 
@@ -18,9 +16,10 @@ namespace Cer.WebApi.Domain.Entity
         [Required]
         public string Password { get; set; }
 
+        public int RoleId { get; set; }
 
-        // public virtual UserProfile UserProfile { get; set; }
+        public virtual UserProfile UserProfile { get; set; }
 
-        // public virtual Rol Role { get; set; }
+        public virtual Rol Role { get; set; }
     }
 }

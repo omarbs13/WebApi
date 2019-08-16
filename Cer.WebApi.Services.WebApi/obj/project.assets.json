@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1673,11 +1686,11 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/2.2.0": {
+      "Microsoft.EntityFrameworkCore/2.2.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore.Analyzers": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.2.6",
+          "Microsoft.EntityFrameworkCore.Analyzers": "2.2.6",
           "Microsoft.Extensions.Caching.Memory": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
           "Microsoft.Extensions.Logging": "2.2.0",
@@ -1694,7 +1707,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/2.2.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/2.2.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -1703,7 +1716,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/2.2.0": {
+      "Microsoft.EntityFrameworkCore.Analyzers/2.2.6": {
         "type": "package"
       },
       "Microsoft.EntityFrameworkCore.Design/2.2.0": {
@@ -4438,10 +4451,141 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Cer.WebApi.Application.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cer.WebApi.Application.Model": "1.0.0",
+          "Cer.WebApi.Cross.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Application.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Application.Interface.dll": {}
+        }
+      },
+      "Cer.WebApi.Application.Main/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Cer.WebApi.Application.Interface": "1.0.0",
+          "Cer.WebApi.Application.Model": "1.0.0",
+          "Cer.WebApi.Domain.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Application.Main.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Application.Main.dll": {}
+        }
+      },
+      "Cer.WebApi.Application.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Application.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Application.Model.dll": {}
+        }
+      },
+      "Cer.WebApi.Cross.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Cross.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Cross.Common.dll": {}
+        }
+      },
+      "Cer.WebApi.Domain.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Domain.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Domain.Entity.dll": {}
+        }
+      },
+      "Cer.WebApi.Domain.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cer.WebApi.Domain.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Domain.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Domain.Interface.dll": {}
+        }
+      },
+      "Cer.WebApi.Infraestructure.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cer.WebApi.Domain.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.6"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Infraestructure.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Infraestructure.Data.dll": {}
+        }
+      },
+      "Cer.WebApi.Infrastructure.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cer.WebApi.Domain.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Infrastructure.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Infrastructure.Interface.dll": {}
+        }
+      },
+      "Cer.WebApi.Infrastructure.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cer.WebApi.Infraestructure.Data": "1.0.0",
+          "Cer.WebApi.Infrastructure.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cer.WebApi.Infrastructure.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cer.WebApi.Infrastructure.Repository.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/9.0.0": {
+      "sha512": "xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "type": "package",
+      "path": "automapper/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.9.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5884,41 +6028,41 @@
         "microsoft.dotnet.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/2.2.0": {
-      "sha512": "xfDHe+J94oz2d+ESDU8u+96iSfsiPwpgYGPRSp/bato0Ekjz5kYs61u9mS0GN5t8n/wxc5P3uEJm1x7TfROxhQ==",
+    "Microsoft.EntityFrameworkCore/2.2.6": {
+      "sha512": "vmrMrjiCO7FkuFJwt/MHl6pk6cSXPtB1miPMtn0KTO7WqwaQ2WQ4gWpC/m753PzVriH2X2kIadWrd9SJb7KVww==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/2.2.0",
+      "path": "microsoft.entityframeworkcore/2.2.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.2.2.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.2.2.6.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/2.2.0": {
-      "sha512": "/js/H09B8MQGoPDFzJoaAealyL66g4vKf7DVcdBYcxgKztkttjZbRzSWKF9PZZFyfBl9Ia/BiStM70t7kjgMpg==",
+    "Microsoft.EntityFrameworkCore.Abstractions/2.2.6": {
+      "sha512": "4CrelpMMLszWqi0gFEYPhbsinXCQ2Vw6rA190IIwKY7THge/ckOwj6QIQKOu3Lmxj4khpzs+b6QADbpRRnOIaQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/2.2.0",
+      "path": "microsoft.entityframeworkcore.abstractions/2.2.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.2.2.6.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/2.2.0": {
-      "sha512": "/1rw3toRCal80Ch51lIjuf/0WfW9ZGB4eRY1y6GOcOoOvnMXXXt+4xMRw/0k0kIwHsWUNXUpw73jf40/Pe+ZYA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/2.2.6": {
+      "sha512": "BpNllkfZABCvMAaIL/pSLxTYYZQqiVesSG6xQpvelrlEfC0s9PS217Sq5Apn/zYW8ALtGoVEY12TblHrZ4SRRA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/2.2.0",
+      "path": "microsoft.entityframeworkcore.analyzers/2.2.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
-        "microsoft.entityframeworkcore.analyzers.2.2.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.2.2.6.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -12066,10 +12210,60 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Cer.WebApi.Application.Interface/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Application.Interface/Cer.WebApi.Application.Interface.csproj",
+      "msbuildProject": "../Cer.WebApi.Application.Interface/Cer.WebApi.Application.Interface.csproj"
+    },
+    "Cer.WebApi.Application.Main/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Application.Main/Cer.WebApi.Application.Main.csproj",
+      "msbuildProject": "../Cer.WebApi.Application.Main/Cer.WebApi.Application.Main.csproj"
+    },
+    "Cer.WebApi.Application.Model/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Application.Model/Cer.WebApi.Application.Model.csproj",
+      "msbuildProject": "../Cer.WebApi.Application.Model/Cer.WebApi.Application.Model.csproj"
+    },
+    "Cer.WebApi.Cross.Common/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Cross.Common/Cer.WebApi.Cross.Common.csproj",
+      "msbuildProject": "../Cer.WebApi.Cross.Common/Cer.WebApi.Cross.Common.csproj"
+    },
+    "Cer.WebApi.Domain.Entity/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Domain.Entity/Cer.WebApi.Domain.Entity.csproj",
+      "msbuildProject": "../Cer.WebApi.Domain.Entity/Cer.WebApi.Domain.Entity.csproj"
+    },
+    "Cer.WebApi.Domain.Interface/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Domain.Interface/Cer.WebApi.Domain.Interface.csproj",
+      "msbuildProject": "../Cer.WebApi.Domain.Interface/Cer.WebApi.Domain.Interface.csproj"
+    },
+    "Cer.WebApi.Infraestructure.Data/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Infraestructure.Data/Cer.WebApi.Infraestructure.Data.csproj",
+      "msbuildProject": "../Cer.WebApi.Infraestructure.Data/Cer.WebApi.Infraestructure.Data.csproj"
+    },
+    "Cer.WebApi.Infrastructure.Interface/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Infrastructure.Interface/Cer.WebApi.Infrastructure.Interface.csproj",
+      "msbuildProject": "../Cer.WebApi.Infrastructure.Interface/Cer.WebApi.Infrastructure.Interface.csproj"
+    },
+    "Cer.WebApi.Infrastructure.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Cer.WebApi.Infrastructure.Repository/Cer.WebApi.Infrastructure.Repository.csproj",
+      "msbuildProject": "../Cer.WebApi.Infrastructure.Repository/Cer.WebApi.Infrastructure.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Cer.WebApi.Application.Interface >= 1.0.0",
+      "Cer.WebApi.Application.Main >= 1.0.0",
+      "Cer.WebApi.Infraestructure.Data >= 1.0.0",
+      "Cer.WebApi.Infrastructure.Interface >= 1.0.0",
+      "Cer.WebApi.Infrastructure.Repository >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
@@ -12104,7 +12298,23 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Application.Interface\\Cer.WebApi.Application.Interface.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Application.Interface\\Cer.WebApi.Application.Interface.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Application.Main\\Cer.WebApi.Application.Main.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Application.Main\\Cer.WebApi.Application.Main.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infraestructure.Data\\Cer.WebApi.Infraestructure.Data.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infraestructure.Data\\Cer.WebApi.Infraestructure.Data.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infrastructure.Interface\\Cer.WebApi.Infrastructure.Interface.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infrastructure.Interface\\Cer.WebApi.Infrastructure.Interface.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infrastructure.Repository\\Cer.WebApi.Infrastructure.Repository.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\Cer.WebApi\\Cer.WebApi.Infrastructure.Repository\\Cer.WebApi.Infrastructure.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

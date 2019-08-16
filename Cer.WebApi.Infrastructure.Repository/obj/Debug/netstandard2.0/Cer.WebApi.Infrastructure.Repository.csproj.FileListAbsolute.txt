@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.deps.json
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Domain.Entity.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infraestructure.Data.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\bin\Debug\netstandard2.0\Cer.WebApi.Domain.Entity.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Repository\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Repository.pdb

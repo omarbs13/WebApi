@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -8,6 +8,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cer.WebApi.Application.Interface\Cer.WebApi.Application.Interface.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Application.Main\Cer.WebApi.Application.Main.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Infraestructure.Data\Cer.WebApi.Infraestructure.Data.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Infrastructure.Interface\Cer.WebApi.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Infrastructure.Repository\Cer.WebApi.Infrastructure.Repository.csproj" />
   </ItemGroup>
 
 </Project>

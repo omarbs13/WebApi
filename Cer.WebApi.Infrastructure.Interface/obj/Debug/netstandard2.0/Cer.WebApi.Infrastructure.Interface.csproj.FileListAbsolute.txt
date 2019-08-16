@@ -1,0 +1,14 @@
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.deps.json
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Domain.Entity.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\Cer.WebApi.Domain.Entity.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.dll
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Infrastructure.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Infrastructure.Interface.pdb
