@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cer.WebApi.Application.Interface\Cer.WebApi.Application.Interface.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Application.Model\Cer.WebApi.Application.Model.csproj" />
+    <ProjectReference Include="..\Cer.WebApi.Domain.Interface\Cer.WebApi.Domain.Interface.csproj" />
+  </ItemGroup>
+
+</Project>
