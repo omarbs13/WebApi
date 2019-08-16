@@ -25,55 +25,189 @@ namespace Cer.WebApi.Application.Main
 
         public Response<bool> Delete(int id)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var user = _userModelDomain.Delete(id);
+               // var userList = _mapper.Map<UserModel>(user);
+                response.Data = user;
+
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Eliminación Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Task<Response<int>> DeleteAsync(int id)
+        public async Task<Response<int>> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var response = new Response<int>();
+            try
+            {
+                var user =await _userModelDomain.DeleteAsync(id);
+                // var userList = _mapper.Map<UserModel>(user);
+                response.Data = user;
+
+                if (response.Data>0)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Eliminación Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Response<IList<UserModel>> Find(Expression<Func<UserModel, bool>> predicate, params string[] navigationProperties)
+        public Response<IList<UserModel>> Find(Expression<Func<UserModel, bool>> predicate)
         {
-            throw new NotImplementedException();
+            var response = new Response<IList<UserModel>>();
+            try
+            {
+                var user = _userModelDomain.Find(c=>c.UserName== "string");
+                var userList = _mapper.Map<IList<UserModel>>(user);
+                response.Data = userList;
+
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Task<Response<IList<UserModel>>> FindAsync(Expression<Func<UserModel, bool>> predicate, params string[] navigationProperties)
+        public async Task<Response<IList<UserModel>>> FindAsync(Expression<Func<UserModel, bool>> predicate)
         {
-            throw new NotImplementedException();
-        }
+            var response = new Response<IList<UserModel>>();
+            try
+            {
+                var user = await _userModelDomain.FindAsync(c => c.UserName == "string");
+                var userList = _mapper.Map<IList<UserModel>>(user);
+                response.Data = userList;
 
-        public Response<IEnumerable<UserModel>> GetAll(params string[] navigationProperties)
-        {
-            throw new NotImplementedException();
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
         public Response<IEnumerable<UserModel>> GetAll()
         {
-            throw new NotImplementedException();
+            var response = new Response<IEnumerable<UserModel>>();
+            try
+            {
+                var users = _userModelDomain.GetAll(IncludeClass.User);
+                var userList = _mapper.Map<IEnumerable<UserModel>>(users);
+                response.Data = userList;
+
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Task<Response<IEnumerable<UserModel>>> GetAllAsync(params string[] navigationProperties)
+        public async Task<Response<IEnumerable<UserModel>>> GetAllAsync()
         {
-            throw new NotImplementedException();
-        }
+            var response = new Response<IEnumerable<UserModel>>();
+            try
+            {
+                var users = await _userModelDomain.GetAllAsync(IncludeClass.User);
+                var userList = _mapper.Map<IEnumerable<UserModel>>(users);
+                response.Data = userList;
 
-        public Task<Response<IEnumerable<UserModel>>> GetAllAsync()
-        {
-            throw new NotImplementedException();
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
         public Response<UserModel> GetById(int id)
         {
-            throw new NotImplementedException();
+            var response = new Response<UserModel>();
+            try
+            {
+                var user = _userModelDomain.GetById(id);
+                var userList = _mapper.Map<UserModel>(user);
+                response.Data = userList;
+
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Task<Response<UserModel>> GetByIdAsync(int id)
+        public async Task<Response<UserModel>> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var response = new Response<UserModel>();
+            try
+            {
+                var user = await _userModelDomain.GetByIdAsync(id);
+                var userList = _mapper.Map<UserModel>(user);
+                response.Data = userList;
+
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Response<bool> Insert(UserModel userModel)
+        public Response<bool> Insert(UserAddModel userModel)
         {
             var response = new Response<bool>();
             try
@@ -83,18 +217,18 @@ namespace Cer.WebApi.Application.Main
                 if (response.Data)
                 {
                     response.IsSuccess = true;
-                    response.Message = "Registro Exitoso!!!";                   
+                    response.Message = "Registro Exitoso!!!";
                 }
             }
             catch (Exception e)
             {
-                response.Message = e.Message + "--> InnerException.Message-->" + e.InnerException.Message;
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
                 _logger.LogError(response.Message);
             }
             return response;
         }
 
-        public async Task<Response<UserModel>> InsertAsync(UserModel userModel)
+        public async Task<Response<UserModel>> InsertAsync(UserAddModel userModel)
         {
             var response = new Response<UserModel>();
             try
@@ -115,14 +249,46 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public Response<bool> Update(UserModel UserModel)
+        public Response<bool> Update(UserAddModel userModel)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var user = _mapper.Map<User>(userModel);
+                response.Data = _userModelDomain.Update(user);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Actualización Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message + "--> InnerException.Message-->" + (e.InnerException != null ? e.InnerException.Message : "");
+                _logger.LogError(response.Message);
+            }
+            return response;
         }
 
-        public Task<Response<bool>> UpdateAsync(UserModel UserModel)
+        public async Task<Response<bool>> UpdateAsync(UserAddModel userModel)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+            try
+            {
+                var userToInst = _mapper.Map<User>(userModel);
+                var user = await _userModelDomain.UpdateAsync(userToInst);
+                response.Data = user;
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro Exitoso!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
         }
     }
 }

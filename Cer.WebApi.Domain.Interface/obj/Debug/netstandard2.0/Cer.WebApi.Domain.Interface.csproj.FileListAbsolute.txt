@@ -11,3 +11,4 @@ C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\net
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.dll
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Domain.Interface\obj\Debug\netstandard2.0\Cer.WebApi.Domain.Interface.csprojAssemblyReference.cache

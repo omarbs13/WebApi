@@ -34,13 +34,13 @@ namespace Cer.WebApi.Infrastructure.Repository
             return await _context.SaveChangesAsync();
         }
 
-        public IList<T> Find(Expression<Func<T, bool>> predicate, params string[] navigationProperties)
+        public IList<T> Find(Expression<Func<T, bool>> predicate, string[] entities = null)
         {
             List<T> list;
 
             var query = _context.Set<T>().AsQueryable();
-
-            foreach (string navigationProperty in navigationProperties)
+            if (entities != null)
+                foreach (string navigationProperty in entities)
                 query = query.Include(navigationProperty);
 
             list = query.Where(predicate).ToList<T>();
@@ -48,13 +48,13 @@ namespace Cer.WebApi.Infrastructure.Repository
             return list;
         }
 
-        public async Task<IList<T>> FindAsync(Expression<Func<T, bool>> predicate, params string[] navigationProperties)
+        public async Task<IList<T>> FindAsync(Expression<Func<T, bool>> predicate, string[] entities = null)
         {
             List<T> list;
 
             var query = _context.Set<T>().AsQueryable();
-
-            foreach (string navigationProperty in navigationProperties)
+            if (entities != null)
+                foreach (string navigationProperty in entities)
                 query = query.Include(navigationProperty);
 
             list = await query.Where(predicate).ToListAsync<T>();
@@ -62,32 +62,27 @@ namespace Cer.WebApi.Infrastructure.Repository
             return list;
         }
 
-        public IEnumerable<T> GetAll(params string[] navigationProperties)
+        public IEnumerable<T> GetAll(string[] entities = null)
         {
             List<T> list;
 
             var query = _context.Set<T>().AsQueryable();
-
-            foreach (string navigationProperty in navigationProperties)
-                query = query.Include(navigationProperty);
+            if (entities != null)
+                foreach (string navigationProperty in entities)
+                    query = query.Include(navigationProperty);
 
             list = query.ToList<T>();
 
             return list;
         }
-
-        public IEnumerable<T> GetAll()
-        {
-            return _entities.AsEnumerable();
-        }
-
-        public async Task<IEnumerable<T>> GetAllAsync(params string[] navigationProperties)
+              
+        public async Task<IEnumerable<T>> GetAllAsync(string[] entities = null)
         {
             List<T> list;
 
             var query = _context.Set<T>().AsQueryable();
-
-            foreach (string navigationProperty in navigationProperties)
+            if (entities != null)
+                foreach (string navigationProperty in entities)
                 query = query.Include(navigationProperty);
 
             list = await query.ToListAsync<T>();

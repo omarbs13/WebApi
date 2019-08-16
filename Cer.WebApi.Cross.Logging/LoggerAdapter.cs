@@ -16,19 +16,19 @@ namespace Cer.WebApi.Cross.Logging
         public void LogInformation(string message, params object[] args)
         {
             _logger.LogInformation(message, args);
-            LogWrite(message, "Information");
+            //LogWrite(message, "Information");
         }
 
         public void LogWarning(string message, params object[] args)
         {
             _logger.LogWarning(message, args);
-            LogWrite(message, "Warning");
+            //LogWrite(message, "Warning");
         }
 
         public void LogError(string message, params object[] args)
         {
             _logger.LogError(message, args);
-            LogWrite(message, "Error");
+           // LogWrite(message, "Error");
         }
 
         private void LogWrite(string logMessage, string type)

@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Cer.WebApi.Domain.Interface
 {
-    public  interface IUserDomain
+    public interface IUserDomain
     {
-        IEnumerable<User> GetAll(params string[] navigationProperties);
-        IEnumerable<User> GetAll();
-        IList<User> Find(Expression<Func<User, bool>> predicate, params string[] navigationProperties);
+        IEnumerable<User> GetAll(string[] navigationProperties = null);
+        IList<User> Find(Expression<Func<User, bool>> predicate, string[] navigationProperties = null);
         User GetById(int id);
         bool Insert(User user);
         bool Update(User user);
         bool Delete(int id);
-        Task<IEnumerable<User>> GetAllAsync(params string[] navigationProperties);
-        Task<IEnumerable<User>> GetAllAsync();
-        Task<IList<User>> FindAsync(Expression<Func<User, bool>> predicate, params string[] navigationProperties);
+        Task<IEnumerable<User>> GetAllAsync(string[] navigationProperties = null);
+        Task<IList<User>> FindAsync(Expression<Func<User, bool>> predicate, string[] navigationProperties = null);
         Task<User> GetByIdAsync(int id);
         Task<User> InsertAsync(User user);
         Task<bool> UpdateAsync(User user);

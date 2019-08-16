@@ -1,6 +1,6 @@
 ﻿namespace Cer.WebApi.Application.Model
 {
-    public class UserModel
+    public class UserAddModel
     {
         public int Id { get; set; }
         public string UserName { get; set; }
@@ -8,5 +8,12 @@
         public string Password { get; set; }
         public int RoleId { get; set; }
         public bool Status { get; set; }
+
+    }
+
+    public class UserModel : UserAddModel
+    {
+        public RolModel Role { get; set; }
+        public UserProfileModel UserProfile { get; set; }
     }
 }

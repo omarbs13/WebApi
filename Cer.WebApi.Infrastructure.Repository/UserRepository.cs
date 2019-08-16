@@ -24,34 +24,24 @@ namespace Cer.WebApi.Infrastructure.Repository
             return await _userRepository.DeleteAsync(await GetByIdAsync(id));
         }
 
-        public IList<User> Find(Expression<Func<User, bool>> predicate, params string[] navigationProperties)
+        public IList<User> Find(Expression<Func<User, bool>> predicate, string[] navigationProperties = null)
         {
             return _userRepository.Find(predicate, navigationProperties);
         }
 
-        public async Task<IList<User>> FindAsync(Expression<Func<User, bool>> predicate, params string[] navigationProperties)
+        public async Task<IList<User>> FindAsync(Expression<Func<User, bool>> predicate, string[] navigationProperties = null)
         {
             return await _userRepository.FindAsync(predicate, navigationProperties);
         }
 
-        public IEnumerable<User> GetAll(params string[] navigationProperties)
+        public IEnumerable<User> GetAll(string[] navigationProperties = null)
         {
             return _userRepository.GetAll(navigationProperties);
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            return _userRepository.GetAll();
-        }
-
-        public async Task<IEnumerable<User>> GetAllAsync(params string[] navigationProperties)
+        public async Task<IEnumerable<User>> GetAllAsync(string[] navigationProperties = null)
         {
             return await _userRepository.GetAllAsync(navigationProperties);
-        }
-
-        public async Task<IEnumerable<User>> GetAllAsync()
-        {
-            return await _userRepository.GetAllAsync();
         }
 
         public User GetById(int id)
