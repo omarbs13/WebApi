@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using Cer.WebApi.Application.Interface;
@@ -21,6 +23,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Cer.WebApi.Services.WebApi
 {
@@ -59,44 +62,44 @@ namespace Cer.WebApi.Services.WebApi
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 
             // Register the Swagger generator, defining 1 or more Swagger documents
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new Info
-            //    {
-            //        Version = "v1",
-            //        Title = "Ceron Technology Services API",
-            //        Description = "ASP.NET Core Web API",
-            //        TermsOfService = "None",
-            //        Contact = new Contact
-            //        {
-            //            Name = "Omar Ceron Ochoa",
-            //            Email = "omarbs13@gmail.com",
-            //            Url = ""
-            //        },
-            //        License = new License
-            //        {
-            //            Name = "Use under ceron",
-            //            Url = ""
-            //        }
-            //    });
-            //    // Set the comments path for the Swagger JSON and UI.
-            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    c.IncludeXmlComments(xmlPath);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Ceron Technology Services API",
+                    Description = "ASP.NET Core Web API",
+                    TermsOfService = "None",
+                    Contact = new Contact
+                    {
+                        Name = "Omar Ceron Ochoa",
+                        Email = "omarbs13@gmail.com",
+                        Url = ""
+                    },
+                    License = new License
+                    {
+                        Name = "Use under ceron",
+                        Url = ""
+                    }
+                });
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
 
-            //    c.AddSecurityDefinition("Authorization", new ApiKeyScheme
-            //    {
-            //        Description = "Authorization by API key.",
-            //        In = "header",
-            //        Type = "apiKey",
-            //        Name = "Authorization"
-            //    });
+                c.AddSecurityDefinition("Authorization", new ApiKeyScheme
+                {
+                    Description = "Authorization by API key.",
+                    In = "header",
+                    Type = "apiKey",
+                    Name = "Authorization"
+                });
 
-            //    c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
-            //    {
-            //        { "Authorization", new string[0] }
-            //    });
-           // });
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    { "Authorization", new string[0] }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -106,14 +109,14 @@ namespace Cer.WebApi.Services.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-          //  app.UseSwagger();
+            app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
             // specifying the Swagger JSON endpoint.
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //});
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseCors(myPolicy);
             app.UseMvc();
