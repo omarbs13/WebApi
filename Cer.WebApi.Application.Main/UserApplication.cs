@@ -29,13 +29,17 @@ namespace Cer.WebApi.Application.Main
             try
             {
                 var user = _userModelDomain.Delete(id);
-               // var userList = _mapper.Map<UserModel>(user);
                 response.Data = user;
 
                 if (response.Data)
                 {
                     response.IsSuccess = true;
                     response.Message = "Eliminación Exitosa!!!";
+                }
+                else
+                {
+                    response.IsSuccess = true;
+                    response.Message = "No se encuentra el registro a eliminar";
                 }
             }
             catch (Exception e)
@@ -46,19 +50,23 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public async Task<Response<int>> DeleteAsync(int id)
+        public async Task<Response<bool>> DeleteAsync(int id)
         {
-            var response = new Response<int>();
+            var response = new Response<bool>();
             try
             {
-                var user =await _userModelDomain.DeleteAsync(id);
-                // var userList = _mapper.Map<UserModel>(user);
+                var user = await _userModelDomain.DeleteAsync(id);
                 response.Data = user;
 
-                if (response.Data>0)
+                if (response.Data)
                 {
                     response.IsSuccess = true;
                     response.Message = "Eliminación Exitosa!!!";
+                }
+                else
+                {
+                    response.IsSuccess = true;
+                    response.Message = "No se encuentra el registro a eliminar";
                 }
             }
             catch (Exception e)
@@ -74,7 +82,7 @@ namespace Cer.WebApi.Application.Main
             var response = new Response<IList<UserModel>>();
             try
             {
-                var user = _userModelDomain.Find(c=>c.UserName== "string");
+                var user = _userModelDomain.Find(c => c.UserName == "string");
                 var userList = _mapper.Map<IList<UserModel>>(user);
                 response.Data = userList;
 
@@ -175,6 +183,11 @@ namespace Cer.WebApi.Application.Main
                     response.IsSuccess = true;
                     response.Message = "Consulta Exitosa!!!";
                 }
+                else
+                {
+                    response.IsSuccess = true;
+                    response.Message = "No existe el registro";
+                }
             }
             catch (Exception e)
             {
@@ -198,6 +211,11 @@ namespace Cer.WebApi.Application.Main
                     response.IsSuccess = true;
                     response.Message = "Consulta Exitosa!!!";
                 }
+                else
+                {
+                    response.IsSuccess = true;
+                    response.Message = "No existe el registro";
+                }
             }
             catch (Exception e)
             {
@@ -207,14 +225,16 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public Response<bool> Insert(UserAddModel userModel)
+        public Response<UserAddModel> Insert(UserAddModel userModel)
         {
-            var response = new Response<bool>();
+            var response = new Response<UserAddModel>();
             try
             {
-                var user = _mapper.Map<User>(userModel);
-                response.Data = _userModelDomain.Insert(user);
-                if (response.Data)
+                var userIns = _mapper.Map<User>(userModel);
+                var user = _userModelDomain.Insert(userIns);
+                response.Data = _mapper.Map<UserAddModel>(user);
+
+                if (response.Data != null)
                 {
                     response.IsSuccess = true;
                     response.Message = "Registro Exitoso!!!";
@@ -228,14 +248,14 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public async Task<Response<UserModel>> InsertAsync(UserAddModel userModel)
+        public async Task<Response<UserAddModel>> InsertAsync(UserAddModel userModel)
         {
-            var response = new Response<UserModel>();
+            var response = new Response<UserAddModel>();
             try
             {
                 var userToInst = _mapper.Map<User>(userModel);
                 var user = await _userModelDomain.InsertAsync(userToInst);
-                response.Data = _mapper.Map<UserModel>(user);
+                response.Data = _mapper.Map<UserAddModel>(user);
                 if (response.Data != null)
                 {
                     response.IsSuccess = true;
@@ -249,14 +269,15 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public Response<bool> Update(UserAddModel userModel)
+        public Response<UserAddModel> Update(UserAddModel userModel)
         {
-            var response = new Response<bool>();
+            var response = new Response<UserAddModel>();
             try
             {
-                var user = _mapper.Map<User>(userModel);
-                response.Data = _userModelDomain.Update(user);
-                if (response.Data)
+                var userToUpd = _mapper.Map<User>(userModel);
+                var user = _userModelDomain.Update(userToUpd);
+                response.Data = _mapper.Map<UserAddModel>(user);
+                if (response.Data != null)
                 {
                     response.IsSuccess = true;
                     response.Message = "Actualización Exitosa!!!";
@@ -270,15 +291,16 @@ namespace Cer.WebApi.Application.Main
             return response;
         }
 
-        public async Task<Response<bool>> UpdateAsync(UserAddModel userModel)
+        public async Task<Response<UserAddModel>> UpdateAsync(UserAddModel userModel)
         {
-            var response = new Response<bool>();
+            var response = new Response<UserAddModel>();
             try
             {
-                var userToInst = _mapper.Map<User>(userModel);
-                var user = await _userModelDomain.UpdateAsync(userToInst);
-                response.Data = user;
-                if (response.Data)
+                var userToUpd = _mapper.Map<User>(userModel);
+                var user = await _userModelDomain.UpdateAsync(userToUpd);
+                response.Data = _mapper.Map<UserAddModel>(user);
+
+                if (response.Data != null)
                 {
                     response.IsSuccess = true;
                     response.Message = "Registro Exitoso!!!";

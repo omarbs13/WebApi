@@ -6,3 +6,4 @@ C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Model\obj\Debug\ne
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Model\obj\Debug\netstandard2.0\Cer.WebApi.Application.Model.AssemblyInfo.cs
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Model\obj\Debug\netstandard2.0\Cer.WebApi.Application.Model.dll
 C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Model\obj\Debug\netstandard2.0\Cer.WebApi.Application.Model.pdb
+C:\Users\ADMIN\source\repos\Cer.WebApi\Cer.WebApi.Application.Model\obj\Debug\netstandard2.0\Cer.WebApi.Application.Model.csprojAssemblyReference.cache

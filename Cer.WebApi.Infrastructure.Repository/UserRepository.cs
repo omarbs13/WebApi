@@ -16,12 +16,14 @@ namespace Cer.WebApi.Infrastructure.Repository
         }
         public bool Delete(int id)
         {
-            return _userRepository.Delete(GetById(id));
+            var user = GetById(id);
+            return user != null ? _userRepository.Delete(user) : false;
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            return await _userRepository.DeleteAsync(await GetByIdAsync(id));
+            var user = await GetByIdAsync(id);
+            return user != null ? await _userRepository.DeleteAsync(user) : false;
         }
 
         public IList<User> Find(Expression<Func<User, bool>> predicate, string[] navigationProperties = null)
@@ -54,7 +56,7 @@ namespace Cer.WebApi.Infrastructure.Repository
             return await _userRepository.GetByIdAsync(id);
         }
 
-        public bool Insert(User entity)
+        public User Insert(User entity)
         {
             return _userRepository.Insert(entity);
         }
@@ -64,12 +66,12 @@ namespace Cer.WebApi.Infrastructure.Repository
             return await _userRepository.InsertAsync(entity);
         }
 
-        public bool Update(User entity)
+        public User Update(User entity)
         {
             return _userRepository.Update(entity);
         }
 
-        public async Task<bool> UpdateAsync(User entity)
+        public async Task<User> UpdateAsync(User entity)
         {
             return await _userRepository.UpdateAsync(entity);
         }

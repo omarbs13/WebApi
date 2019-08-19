@@ -21,7 +21,7 @@ namespace Cer.WebApi.Domain.Core
             return _userRepository.Delete(id);
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             return await _userRepository.DeleteAsync(id);
         }
@@ -58,7 +58,7 @@ namespace Cer.WebApi.Domain.Core
             return await _userRepository.GetByIdAsync(id);
         }
 
-        public bool Insert(User user)
+        public User Insert(User user)
         {
             return _userRepository.Insert(user);
         }
@@ -68,12 +68,12 @@ namespace Cer.WebApi.Domain.Core
             return await _userRepository.InsertAsync(user);
         }
 
-        public bool Update(User user)
+        public User Update(User user)
         {
             return _userRepository.Update(user);
         }
 
-        public async Task<bool> UpdateAsync(User user)
+        public async Task<User> UpdateAsync(User user)
         {
             return await _userRepository.UpdateAsync(user);
         }

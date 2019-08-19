@@ -11,15 +11,15 @@ namespace Cer.WebApi.Infrastructure.Interface
         IEnumerable<T> GetAll(string[] navigationProperties = null);
         IList<T> Find(Expression<Func<T, bool>> predicate, string[] navigationProperties = null);
         T GetById(int id);
-        bool Insert(T entity);
-        bool Update(T entity);
+        T Insert(T entity);
+        T Update(T entity);
         bool Delete(T entity);
         Task<IEnumerable<T>> GetAllAsync(string[] navigationProperties = null);
         Task<IList<T>> FindAsync(Expression<Func<T, bool>> predicate, string[] navigationProperties = null);
         Task<T> GetByIdAsync(int id);
         Task<T> InsertAsync(T entity);
-        Task<bool> UpdateAsync(T entity);
-        Task<int> DeleteAsync(T entity);
+        Task<T> UpdateAsync(T entity);
+        Task<bool> DeleteAsync(T entity);
 
     }
 }

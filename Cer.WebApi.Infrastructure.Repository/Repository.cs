@@ -28,10 +28,10 @@ namespace Cer.WebApi.Infrastructure.Repository
             return true;
         }
 
-        public async Task<int> DeleteAsync(T entity)
+        public async Task<bool> DeleteAsync(T entity)
         {
             _entities.Remove(entity);
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public IList<T> Find(Expression<Func<T, bool>> predicate, string[] entities = null)
@@ -41,11 +41,11 @@ namespace Cer.WebApi.Infrastructure.Repository
             var query = _context.Set<T>().AsQueryable();
             if (entities != null)
                 foreach (string navigationProperty in entities)
-                query = query.Include(navigationProperty);
+                    query = query.Include(navigationProperty);
 
             list = query.Where(predicate).ToList<T>();
 
-            return list;
+            return list.Where(x => x.Status).ToList();
         }
 
         public async Task<IList<T>> FindAsync(Expression<Func<T, bool>> predicate, string[] entities = null)
@@ -55,11 +55,11 @@ namespace Cer.WebApi.Infrastructure.Repository
             var query = _context.Set<T>().AsQueryable();
             if (entities != null)
                 foreach (string navigationProperty in entities)
-                query = query.Include(navigationProperty);
+                    query = query.Include(navigationProperty);
 
             list = await query.Where(predicate).ToListAsync<T>();
 
-            return list;
+            return list.Where(x => x.Status).ToList();
         }
 
         public IEnumerable<T> GetAll(string[] entities = null)
@@ -71,11 +71,11 @@ namespace Cer.WebApi.Infrastructure.Repository
                 foreach (string navigationProperty in entities)
                     query = query.Include(navigationProperty);
 
-            list = query.ToList<T>();
+            list = query.Where(x => x.Status).ToList<T>();
 
             return list;
         }
-              
+
         public async Task<IEnumerable<T>> GetAllAsync(string[] entities = null)
         {
             List<T> list;
@@ -83,33 +83,29 @@ namespace Cer.WebApi.Infrastructure.Repository
             var query = _context.Set<T>().AsQueryable();
             if (entities != null)
                 foreach (string navigationProperty in entities)
-                query = query.Include(navigationProperty);
+                    query = query.Include(navigationProperty);
 
-            list = await query.ToListAsync<T>();
+            list = await query.Where(x => x.Status).ToListAsync<T>();
 
             return list;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            return await _entities.ToListAsync();
-        }
 
         public T GetById(int id)
         {
-            return _entities.SingleOrDefault(s => s.Id == id);
+            return _entities.SingleOrDefault(s => s.Id == id && s.Status);
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _entities.SingleOrDefaultAsync(s => s.Id == id);
+            return await _entities.SingleOrDefaultAsync(s => s.Id == id && s.Status);
         }
 
-        public bool Insert(T entity)
+        public T Insert(T entity)
         {
             _entities.Add(entity);
             _context.SaveChanges();
-            return true;
+            return entity;
         }
 
         public async Task<T> InsertAsync(T entity)
@@ -119,18 +115,18 @@ namespace Cer.WebApi.Infrastructure.Repository
             return entity;
         }
 
-        public bool Update(T entity)
+        public T Update(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
-            return true;
+            return entity;
         }
 
-        public async Task<bool> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return true;
+            return entity;
         }
     }
 }
