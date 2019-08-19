@@ -23,6 +23,33 @@ namespace Cer.WebApi.Application.Main
             _logger = logger;
         }
 
+        public Response<UserModelToken> Authenticate(string username, string password)
+        {
+            var response = new Response<UserModelToken>();
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                response.Message = "Parámetros no pueden ser vacios.";
+                return response;
+            }
+            try
+            {
+                var user = _userModelDomain.Authenticate(username, password);
+                response.Data = _mapper.Map<UserModelToken>(user);
+                response.IsSuccess = true;
+                response.Message = "Autenticación Exitosa!!!";
+            }
+            catch (InvalidOperationException)
+            {
+                response.IsSuccess = true;
+                response.Message = "Usuario no existe";
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
         public Response<bool> Delete(int id)
         {
             var response = new Response<bool>();

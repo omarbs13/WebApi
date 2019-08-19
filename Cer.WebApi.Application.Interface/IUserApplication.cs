@@ -21,5 +21,6 @@ namespace Cer.WebApi.Application.Interface
         Task<Response<UserAddModel>> InsertAsync(UserAddModel user);
         Task<Response<UserAddModel>> UpdateAsync(UserAddModel user);
         Task<Response<bool>> DeleteAsync(int id);
+        Response<UserModelToken> Authenticate(string username, string password);
     }
 }

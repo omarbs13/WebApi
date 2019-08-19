@@ -12,6 +12,7 @@ namespace Cer.WebApi.Cross.Mapper
 
             CreateMap<User, UserModel>().ReverseMap();
             CreateMap<User, UserAddModel>().ReverseMap();
+            CreateMap<User, UserModelToken>().ReverseMap();
             CreateMap<Rol, RolModel>().ReverseMap();
             CreateMap<UserProfile, UserProfileModel>().ReverseMap();
         }

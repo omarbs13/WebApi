@@ -20,5 +20,6 @@ namespace Cer.WebApi.Infrastructure.Interface
         Task<User> InsertAsync(User entity);
         Task<User> UpdateAsync(User entity);
         Task<bool> DeleteAsync(int id);
+        User Authenticate(string username, string password);
     }
 }

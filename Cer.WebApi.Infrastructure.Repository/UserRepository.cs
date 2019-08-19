@@ -2,6 +2,7 @@
 using Cer.WebApi.Infrastructure.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -14,6 +15,12 @@ namespace Cer.WebApi.Infrastructure.Repository
         {
             _userRepository = userRepository;
         }
+
+        public User Authenticate(string username, string password)
+        {
+            return _userRepository.Find(x => x.UserName == username && x.Password == password).FirstOrDefault();
+        }
+
         public bool Delete(int id)
         {
             var user = GetById(id);

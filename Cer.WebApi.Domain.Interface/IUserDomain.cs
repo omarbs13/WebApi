@@ -20,5 +20,7 @@ namespace Cer.WebApi.Domain.Interface
         Task<User> InsertAsync(User user);
         Task<User> UpdateAsync(User user);
         Task<bool> DeleteAsync(int id);
+
+        User Authenticate(string username, string password);
     }
 }

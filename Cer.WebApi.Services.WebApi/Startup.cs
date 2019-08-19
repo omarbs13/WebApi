@@ -9,17 +9,22 @@ using Cer.WebApi.Domain.Interface;
 using Cer.WebApi.Infraestructure.Data;
 using Cer.WebApi.Infrastructure.Interface;
 using Cer.WebApi.Infrastructure.Repository;
+using Cer.WebApi.Services.WebApi.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Cer.WebApi.Services.WebApi
 {
@@ -64,7 +69,15 @@ namespace Cer.WebApi.Services.WebApi
                                                                                         .AllowAnyHeader()
                                                                                         .AllowAnyMethod()));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options => { options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver(); }); ;
+
+            var appSettingsSection = Configuration.GetSection("Config");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            // configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"), b => b.MigrationsAssembly("Cer.WebApi.Services.WebApi")));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserApplication, UserApplication>();
@@ -72,6 +85,49 @@ namespace Cer.WebApi.Services.WebApi
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            var Issuer = appSettings.Issuer;
+            var Audience = appSettings.Audience;
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        var userId = int.Parse(context.Principal.Identity.Name);
+                        return Task.CompletedTask;
+                    },
+
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false; 
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = Issuer,
+                    ValidateAudience = true,
+                    ValidAudience = Audience,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -136,6 +192,7 @@ namespace Cer.WebApi.Services.WebApi
             });
 
             app.UseCors(myPolicy);
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

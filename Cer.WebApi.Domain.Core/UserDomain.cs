@@ -16,6 +16,11 @@ namespace Cer.WebApi.Domain.Core
             _userRepository = userRepository;
         }
 
+        public User Authenticate(string username, string password)
+        {
+            return _userRepository.Authenticate(username, password);
+        }
+
         public bool Delete(int id)
         {
             return _userRepository.Delete(id);
